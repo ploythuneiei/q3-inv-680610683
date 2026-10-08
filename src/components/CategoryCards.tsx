@@ -37,15 +37,15 @@ export function CategoryCards() {
           0,
         );
 
-        const categoryIcon = iconMap[category];
+        const categoryIcon = iconMap[category.label];
         return (
           // Use Card component to display values by category
 
           <div>
             <Card>
-              {categoryIcon}
               <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium">{category.label}</CardTitle>
+                <CardTitle className="text-sm font-medium">{categoryIcon}
+                  {category.label}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-xl font-bold">฿{categoryValue.toFixed(2)}</div>
