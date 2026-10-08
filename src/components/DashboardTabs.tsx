@@ -1,3 +1,4 @@
+import { Summary, LayoutGrid } from "lucide-react";
 import { useState } from "react";
 import { OverviewCards } from "./OverviewCards";
 import { CategoryCards } from "./CategoryCards"
@@ -9,8 +10,10 @@ export function DashboardTabs() {
   return (
     <Tabs value={mode} onValueChange={(v) => setMode(v as "overview" | "category")}>
       <TabsList>
-        <TabsTrigger value="overview">Overview</TabsTrigger>
-        <TabsTrigger value="category">By Category</TabsTrigger>
+        <TabsTrigger value="overview" className="text-lg">
+          <Summary />Overview</TabsTrigger>
+        <TabsTrigger value="category" className="text-lg">
+          <LayoutGrid />By Category</TabsTrigger>
       </TabsList>
       {/* กรณีเลือกแท็บ "ค้นหาตามวิชา" (value="course") */}
       <TabsContent value="overview" className="pt-2">
